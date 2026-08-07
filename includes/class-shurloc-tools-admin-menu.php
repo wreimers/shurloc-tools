@@ -126,14 +126,18 @@ final class Shurloc_Tools_Admin_Menu {
 
 			<?php
 			/**
-			 * Render ShurLoc Tools overview sections.
+			 * Fires when rendering the ShurLoc Tools overview page.
 			 *
-			 * Suggested priorities:
+			 * ShurLoc plugins should use this action to render their own overview
+			 * sections. Suggested priorities:
 			 *
 			 * 10 - Products
 			 * 20 - Customers
 			 * 30 - Checkout
+			 *
+			 * @since 0.1.0
 			 */
+
 			do_action( 'shurloc_tools_overview' );
 			?>
 
