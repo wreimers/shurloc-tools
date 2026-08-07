@@ -1,0 +1,17 @@
+{
+    "require-dev": {
+        "wp-coding-standards/wpcs": "3.4.1",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "phpunit/phpunit": "12.5.31"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+     "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf",
+        "test": "phpunit"
+    }
+}
