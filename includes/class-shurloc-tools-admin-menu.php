@@ -68,41 +68,18 @@ final class Shurloc_Tools_Admin_Menu {
 			56
 		);
 
-		$this->rename_overview_submenu();
-	}
-
-	/**
-	 * Rename WordPress's automatically generated parent submenu.
-	 *
-	 * WordPress automatically adds the top-level page as the first submenu
-	 * entry. Rename that entry to "Overview" while preserving its slug so
-	 * clicking either the parent menu or Overview renders the same page.
-	 *
-	 * @return void
-	 */
-	private function rename_overview_submenu(): void {
-
-		global $submenu;
-
-		if (
-			! isset( $submenu[ self::MENU_SLUG ] ) ||
-			! is_array( $submenu[ self::MENU_SLUG ] )
-		) {
-			return;
-		}
-
-		foreach ( $submenu[ self::MENU_SLUG ] as &$submenu_item ) {
-
-			if (
-				isset( $submenu_item[2] ) &&
-				self::MENU_SLUG === $submenu_item[2]
-			) {
-				$submenu_item[0] = 'Overview';
-				break;
-			}
-		}
-
-		unset( $submenu_item );
+		add_submenu_page(
+			self::MENU_SLUG,
+			'ShurLoc Tools',
+			'Overview',
+			self::CAPABILITY,
+			self::MENU_SLUG,
+			array(
+				$this,
+				'render_overview_page',
+			),
+			0
+		);
 	}
 
 	/**

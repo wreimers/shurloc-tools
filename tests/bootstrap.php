@@ -13,3 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Load Composer's autoloader.
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+
+// Load WordPress function doubles.
+require_once dirname( __DIR__ ) . '/tests/wordpress-functions.php';
+
+// Load menu.
+require_once dirname( __DIR__ ) . '/includes/class-shurloc-tools-admin-menu.php';
