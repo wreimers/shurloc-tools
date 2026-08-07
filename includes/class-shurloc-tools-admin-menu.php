@@ -1,10 +1,14 @@
 <?php
 /**
- * Plugin Name: ShurLoc Tools
- * Description: Shared infrastructure for ShurLoc WordPress and WooCommerce tools.
- * Version: 0.1.0
- * Author: ShurLoc
- * Text Domain: shurloc-tools
+ * Plugin Name:       ShurLoc Tools
+ * Plugin URI:        https://shurloc.com/
+ * Description:       Shared infrastructure for ShurLoc WordPress and WooCommerce tools.
+ * Version:           0.1.0
+ * Requires at least: 7.0
+ * Requires PHP:      8.4
+ * Author:            Shur-Loc
+ * Author URI:        https://shurloc.com/
+ * Text Domain:       shurloc-tools
  *
  * @package ShurLocTools
  */
