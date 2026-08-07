@@ -4,3 +4,4 @@
 - Initial plugin files
 - Configuration files
 - WordPress Coding Standards configuration
+- Build script
