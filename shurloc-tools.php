@@ -19,8 +19,6 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Plugin version.
- *
- * @var string
  */
 define(
 	'SHURLOC_TOOLS_VERSION',
@@ -29,8 +27,6 @@ define(
 
 /**
  * Main plugin file.
- *
- * @var string
  */
 define(
 	'SHURLOC_TOOLS_FILE',
@@ -39,8 +35,6 @@ define(
 
 /**
  * Plugin directory path.
- *
- * @var string
  */
 define(
 	'SHURLOC_TOOLS_PATH',
@@ -49,8 +43,6 @@ define(
 
 /**
  * Plugin directory URL.
- *
- * @var string
  */
 define(
 	'SHURLOC_TOOLS_URL',
