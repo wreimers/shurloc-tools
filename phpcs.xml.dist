@@ -7,6 +7,7 @@
 
 	<!-- Analyze code as PHP 8.4 -->
 	<config name="php_version" value="80400"/>
+	<config name="testVersion" value="8.4-"/>
 
 	<!-- Files to scan -->
 	<file>includes</file>
@@ -31,11 +32,7 @@
 	</rule>
 
 	<!-- PHP compatibility -->
-	<rule ref="PHPCompatibilityWP">
-		<properties>
-			<property name="testVersion" value="8.4-"/>
-		</properties>
-	</rule>
+	<rule ref="PHPCompatibilityWP"/>
 
 	<!--
 		The Squiz @throws sniff does not recognize exceptions thrown by
