@@ -62,6 +62,8 @@ $ExcludedFiles = @(
     "phpcs.xml.dist",
     "phpunit.xml",
     "phpunit.xml.dist",
+    "phpstan.neon",
+    "phpstan.neon.dist",
     "README-development.md",
     "TODO.md",
     ".gitkeep",
