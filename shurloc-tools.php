@@ -49,8 +49,8 @@ define(
 	plugin_dir_url( __FILE__ )
 );
 
-require_once SHURLOC_TOOLS_PATH
-	. 'includes/class-shurloc-tools-admin-menu.php';
+require_once SHURLOC_TOOLS_PATH . 'includes/class-shurloc-tools-admin-menu.php';
+require_once SHURLOC_TOOLS_PATH . 'includes/interfaces/interface-shurloc-admin-page.php';
 
 /**
  * Initialize ShurLoc Tools.
