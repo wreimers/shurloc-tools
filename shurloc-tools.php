@@ -58,10 +58,10 @@ define(
  */
 function shurloc_tools_initialize(): void {
 
-	require_once SHURLOC_TOOLS_PATH . 'includes/class-shurloc-tools-admin-menu.php';
+	require_once SHURLOC_TOOLS_PATH . 'includes/class-shurloc-admin-menu.php';
 	require_once SHURLOC_TOOLS_PATH . 'includes/interfaces/interface-shurloc-admin-page.php';
 
-	$admin_menu = new Shurloc_Tools_Admin_Menu();
+	$admin_menu = new Shurloc_Admin_Menu();
 
 	$admin_menu->register();
 }

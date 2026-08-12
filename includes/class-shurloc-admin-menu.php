@@ -10,12 +10,14 @@
 
 declare( strict_types=1 );
 
+namespace Shurloc\Tools;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Registers the shared ShurLoc Tools admin menu.
  */
-final class Shurloc_Tools_Admin_Menu {
+final class Shurloc_Admin_Menu {
 
 	/**
 	 * Parent menu slug.
