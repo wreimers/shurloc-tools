@@ -15,6 +15,8 @@
 
 declare( strict_types=1 );
 
+namespace Shurloc\Tools;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -49,9 +51,6 @@ define(
 	plugin_dir_url( __FILE__ )
 );
 
-require_once SHURLOC_TOOLS_PATH . 'includes/class-shurloc-tools-admin-menu.php';
-require_once SHURLOC_TOOLS_PATH . 'includes/interfaces/interface-shurloc-admin-page.php';
-
 /**
  * Initialize ShurLoc Tools.
  *
@@ -59,9 +58,16 @@ require_once SHURLOC_TOOLS_PATH . 'includes/interfaces/interface-shurloc-admin-p
  */
 function shurloc_tools_initialize(): void {
 
+	require_once SHURLOC_TOOLS_PATH . 'includes/class-shurloc-tools-admin-menu.php';
+	require_once SHURLOC_TOOLS_PATH . 'includes/interfaces/interface-shurloc-admin-page.php';
+
 	$admin_menu = new Shurloc_Tools_Admin_Menu();
 
 	$admin_menu->register();
 }
 
-shurloc_tools_initialize();
+add_action(
+	'plugins_loaded',
+	__NAMESPACE__ . '\\shurloc_tools_initialize',
+	10
+);
