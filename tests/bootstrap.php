@@ -18,4 +18,4 @@ require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 require_once dirname( __DIR__ ) . '/tests/wordpress-functions.php';
 
 // Load menu.
-require_once dirname( __DIR__ ) . '/includes/class-shurloc-tools-admin-menu.php';
+require_once dirname( __DIR__ ) . '/includes/class-shurloc-admin-menu.php';
