@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+namespace Shurloc\Tools;
+
 /**
  * Represents an admin page that can be rendered.
  */

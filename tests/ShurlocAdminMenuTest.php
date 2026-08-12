@@ -7,19 +7,21 @@
 
 declare(strict_types=1);
 
+namespace Shurloc\Tools;
+
 use PHPUnit\Framework\TestCase;
 
 /**
  * Tests the shared ShurLoc Tools admin menu.
  */
-final class ShurlocToolsAdminMenuTest extends TestCase {
+final class ShurlocAdminMenuTest extends TestCase {
 
 	/**
 	 * Admin menu under test.
 	 *
-	 * @var Shurloc_Tools_Admin_Menu
+	 * @var Shurloc_Admin_Menu
 	 */
-	private Shurloc_Tools_Admin_Menu $admin_menu;
+	private Shurloc_Admin_Menu $admin_menu;
 
 	/**
 	 * Prepare each test.
@@ -36,7 +38,7 @@ final class ShurlocToolsAdminMenuTest extends TestCase {
 		$GLOBALS['shurloc_test_submenu_pages']   = array();
 		$GLOBALS['shurloc_test_fired_actions']   = array();
 
-		$this->admin_menu = new Shurloc_Tools_Admin_Menu();
+		$this->admin_menu = new Shurloc_Admin_Menu();
 	}
 
 	/**
