@@ -21,6 +21,11 @@ defined( 'ABSPATH' ) || exit;
 const SHURLOC_SITE_KIT_PLUGIN = 'google-site-kit/google-site-kit.php';
 
 /**
+ * Staging email recipient.
+ */
+const SHURLOC_STAGING_EMAIL_RECIPIENT = 'liam@shurloc.com';
+
+/**
  * Determine whether the current environment is staging.
  *
  * @return bool
@@ -160,3 +165,103 @@ add_filter(
 	10,
 	2
 );
+
+/**
+ * Redirect all outgoing WordPress email on staging.
+ *
+ * @param array<string,mixed> $args wp_mail() arguments.
+ * @return array<string,mixed>
+ */
+function shurloc_redirect_staging_email( array $args ): array {
+	if ( ! shurloc_is_staging_environment() ) {
+		return $args;
+	}
+
+	$args['to'] = SHURLOC_STAGING_EMAIL_RECIPIENT;
+
+	if ( isset( $args['headers'] ) ) {
+		$args['headers'] = shurloc_remove_staging_email_recipient_headers(
+			$args['headers']
+		);
+	}
+
+	if (
+		isset( $args['subject'] ) &&
+		is_string( $args['subject'] )
+	) {
+		$args['subject'] = '[STAGING] ' . $args['subject'];
+	}
+
+	return $args;
+}
+add_filter(
+	'wp_mail',
+	'shurloc_redirect_staging_email',
+	999
+);
+
+/**
+ * Remove CC and BCC headers from an outgoing email.
+ *
+ * @param mixed $headers Email headers.
+ * @return mixed
+ */
+function shurloc_remove_staging_email_recipient_headers(
+	mixed $headers
+): mixed {
+	if ( is_array( $headers ) ) {
+		return array_values(
+			array_filter(
+				$headers,
+				static function ( mixed $header ): bool {
+					if ( ! is_string( $header ) ) {
+						return true;
+					}
+
+					return ! shurloc_is_staging_email_recipient_header(
+						$header
+					);
+				}
+			)
+		);
+	}
+
+	if ( ! is_string( $headers ) ) {
+		return $headers;
+	}
+
+	$header_lines = preg_split(
+		'/\r\n|\r|\n/',
+		$headers
+	);
+
+	if ( false === $header_lines ) {
+		return $headers;
+	}
+
+	$header_lines = array_filter(
+		$header_lines,
+		static function ( string $header ): bool {
+			return ! shurloc_is_staging_email_recipient_header(
+				$header
+			);
+		}
+	);
+
+	return implode( "\r\n", $header_lines );
+}
+
+/**
+ * Determine whether an email header contains an additional recipient.
+ *
+ * @param string $header Email header.
+ * @return bool
+ */
+function shurloc_is_staging_email_recipient_header(
+	string $header
+): bool {
+	return 1 === preg_match(
+		'/^(cc|bcc)\s*:/i',
+		trim( $header )
+	);
+}
