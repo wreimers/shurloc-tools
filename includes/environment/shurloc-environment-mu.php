@@ -32,8 +32,8 @@ function shurloc_is_staging_environment(): bool {
 /**
  * Prevent Google Site Kit from loading on staging.
  *
- * Site Kit remains marked active in the database, but is filtered from the
- * active plugin list before normal plugins are loaded.
+ * Site Kit remains installed, but is filtered from the active plugin list
+ * before normal plugins are loaded.
  *
  * @param string[] $plugins Active plugin basenames.
  * @return string[]
@@ -86,40 +86,46 @@ add_filter(
 	2
 );
 
-
 /**
- * Add a staging-disabled notice to Google Site Kit in the Plugins list.
+ * Replace Google Site Kit action links with a staging-disabled message.
  *
- * @param string[] $plugin_meta Plugin metadata.
- * @param string   $plugin_file Plugin basename.
+ * @param string[]            $actions     Plugin action links.
+ * @param string              $plugin_file Plugin basename.
+ * @param array<string,mixed> $plugin_data Plugin data.
+ * @param string              $context     Plugin list context.
  * @return string[]
  */
-function shurloc_site_kit_staging_plugin_meta(
-	array $plugin_meta,
-	string $plugin_file
+function shurloc_site_kit_staging_plugin_actions(
+	array $actions,
+	string $plugin_file,
+	array $plugin_data,
+	string $context
 ): array {
 	if ( ! shurloc_is_staging_environment() ) {
-		return $plugin_meta;
+		return $actions;
 	}
 
 	if ( SHURLOC_SITE_KIT_PLUGIN !== $plugin_file ) {
-		return $plugin_meta;
+		return $actions;
 	}
 
-	$plugin_meta[] = sprintf(
-		'<strong>%s</strong>',
-		esc_html(
-			'Disabled on staging by ShurLoc Environment'
-		)
-	);
+	unset( $plugin_data );
+	unset( $context );
 
-	return $plugin_meta;
+	return array(
+		'shurloc_environment' => sprintf(
+			'%s',
+			esc_html(
+				'Disabled on staging by ShurLoc Environment'
+			)
+		),
+	);
 }
 add_filter(
-	'plugin_row_meta',
-	'shurloc_site_kit_staging_plugin_meta',
+	'plugin_action_links',
+	'shurloc_site_kit_staging_plugin_actions',
 	10,
-	2
+	4
 );
 
 /**
@@ -142,9 +148,9 @@ function shurloc_site_kit_staging_auto_update_setting(
 	}
 
 	return sprintf(
-		'<span class="dashicons dashicons-lock" aria-hidden="true"></span> %s',
+		'%s',
 		esc_html(
-			'Disabled by ShurLoc Environment'
+			'Auto-updates disabled by ShurLoc Environment'
 		)
 	);
 }
