@@ -58,14 +58,14 @@ add_filter(
 /**
  * Disable automatic updates for Google Site Kit on staging.
  *
- * @param bool   $update Whether the plugin should be automatically updated.
- * @param object $item   Plugin update data.
- * @return bool
+ * @param bool|null $update Whether the plugin should be automatically updated.
+ * @param object    $item   Plugin update data.
+ * @return bool|null
  */
 function shurloc_disable_site_kit_auto_updates_on_staging(
-	bool $update,
+	?bool $update,
 	object $item
-): bool {
+): ?bool {
 	if ( ! shurloc_is_staging_environment() ) {
 		return $update;
 	}
@@ -85,6 +85,7 @@ add_filter(
 	10,
 	2
 );
+
 
 /**
  * Add a staging-disabled notice to Google Site Kit in the Plugins list.
