@@ -2,7 +2,7 @@
 /**
  * Admin page interface.
  *
- * @package ShurLocTools
+ * @package ShurlocTools
  */
 
 declare(strict_types=1);

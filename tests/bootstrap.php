@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap.
  *
- * @package ShurLocProductTools
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );

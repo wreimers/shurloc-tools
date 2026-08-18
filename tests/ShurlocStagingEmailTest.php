@@ -2,7 +2,7 @@
 /**
  * Tests for staging email redirection.
  *
- * @package ShurlocEnvironment
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );

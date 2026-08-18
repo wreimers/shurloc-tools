@@ -8,7 +8,7 @@
  * Author URI:  https://shurloc.com/
  * Text Domain: shurloc-environment
  *
- * @package ShurlocEnvironment
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );

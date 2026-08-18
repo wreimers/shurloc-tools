@@ -2,7 +2,7 @@
 /**
  * Tests for the shared ShurLoc Tools admin menu.
  *
- * @package ShurLocTools
+ * @package ShurlocTools
  */
 
 declare(strict_types=1);
