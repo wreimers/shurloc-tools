@@ -2,7 +2,7 @@
 /**
  * WordPress function test doubles.
  *
- * @package ShurLocProductTools
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );
@@ -29,6 +29,36 @@ if ( ! function_exists( 'add_action' ) ) {
 		$GLOBALS['shurloc_test_actions'][ $hook ][] = $callback;
 
 		$GLOBALS['shurloc_test_action_metadata'][ $hook ][] = array(
+			'priority'      => $priority,
+			'accepted_args' => $accepted_args,
+		);
+
+		return true;
+	}
+}
+
+
+if ( ! function_exists( 'add_filter' ) ) {
+
+	/**
+	 * Register test filter.
+	 *
+	 * @param string   $hook          Hook name.
+	 * @param callable $callback      Callback.
+	 * @param int      $priority      Priority.
+	 * @param int      $accepted_args Accepted arguments.
+	 * @return true
+	 */
+	function add_filter(
+		string $hook,
+		$callback,
+		int $priority = 10,
+		int $accepted_args = 1
+	): bool {
+
+		$GLOBALS['shurloc_test_filters'][ $hook ][] = $callback;
+
+		$GLOBALS['shurloc_test_filter_metadata'][ $hook ][] = array(
 			'priority'      => $priority,
 			'accepted_args' => $accepted_args,
 		);
@@ -155,5 +185,33 @@ if ( ! function_exists( 'add_submenu_page' ) ) {
 		);
 
 		return $parent_slug . '_page_' . $menu_slug;
+	}
+}
+
+
+if ( ! function_exists( 'wp_get_environment_type' ) ) {
+
+	/**
+	 * Get the test WordPress environment type.
+	 *
+	 * @return string
+	 */
+	function wp_get_environment_type(): string {
+
+		return $GLOBALS['shurloc_test_environment_type'] ?? 'production';
+	}
+}
+
+
+if ( ! function_exists( 'esc_html' ) ) {
+
+	/**
+	 * Escape test HTML text.
+	 *
+	 * @param string $text Text to escape.
+	 * @return string
+	 */
+	function esc_html( string $text ): string {
+		return $text;
 	}
 }

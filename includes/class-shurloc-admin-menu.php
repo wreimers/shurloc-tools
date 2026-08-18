@@ -5,7 +5,7 @@
  * Registers the ShurLoc Tools top-level menu, Overview submenu,
  * and shared overview rendering hook.
  *
- * @package ShurLocTools
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );
