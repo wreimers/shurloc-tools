@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name:       ShurLoc Environment Loader
+ * Plugin Name:       Shur-loc Environment Loader
  * Plugin URI:        https://shurloc.com/
- * Description:       Loads ShurLoc environment safeguards before normal plugins.
+ * Description:       Loads Shur-loc environment safeguards before normal plugins.
  * Version:           1.1.0
- * Author:            ShurLoc
+ * Author:            Shur-loc
  * Author URI:        https://shurloc.com/
  * Text Domain:       shurloc-environment-loader
  *

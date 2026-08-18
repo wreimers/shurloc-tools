@@ -1,6 +1,6 @@
 <?php
 /**
- * Tests for ShurLoc Environment shared functionality.
+ * Tests for Shur-loc Environment shared functionality.
  *
  * @package ShurlocTools
  */
@@ -10,7 +10,7 @@ declare( strict_types=1 );
 use PHPUnit\Framework\TestCase;
 
 /**
- * Tests shared ShurLoc Environment functionality.
+ * Tests shared Shur-loc Environment functionality.
  */
 final class ShurlocEnvironmentTest extends TestCase {
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Tests for the shared ShurLoc Tools admin menu.
+ * Tests for the shared Shur-loc Tools admin menu.
  *
  * @package ShurlocTools
  */
@@ -97,7 +97,7 @@ final class ShurlocAdminMenuTest extends TestCase {
 	}
 
 	/**
-	 * Verify that the ShurLoc Tools parent menu is registered.
+	 * Verify that the Shur-loc Tools parent menu is registered.
 	 *
 	 * @return void
 	 */
@@ -113,12 +113,12 @@ final class ShurlocAdminMenuTest extends TestCase {
 		$menu = $GLOBALS['shurloc_test_menu_pages'][0];
 
 		self::assertSame(
-			'ShurLoc Tools',
+			'Shur-loc Tools',
 			$menu['page_title']
 		);
 
 		self::assertSame(
-			'ShurLoc Tools',
+			'Shur-loc Tools',
 			$menu['menu_title']
 		);
 
@@ -173,7 +173,7 @@ final class ShurlocAdminMenuTest extends TestCase {
 		);
 
 		self::assertSame(
-			'ShurLoc Tools',
+			'Shur-loc Tools',
 			$submenu['page_title']
 		);
 
@@ -222,7 +222,7 @@ final class ShurlocAdminMenuTest extends TestCase {
 		self::assertIsString( $output );
 
 		self::assertStringContainsString(
-			'<h1>ShurLoc Tools</h1>',
+			'<h1>Shur-loc Tools</h1>',
 			$output
 		);
 	}
@@ -243,7 +243,7 @@ final class ShurlocAdminMenuTest extends TestCase {
 		self::assertIsString( $output );
 
 		self::assertStringContainsString(
-			'Administrative tools for ShurLoc WordPress and WooCommerce operations.',
+			'Administrative tools for Shur-loc WordPress and WooCommerce operations.',
 			$output
 		);
 	}

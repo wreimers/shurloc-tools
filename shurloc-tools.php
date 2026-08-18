@@ -52,7 +52,7 @@ define(
 );
 
 /**
- * Initialize ShurLoc Tools.
+ * Initialize Shur-loc Tools.
  *
  * @return void
  */

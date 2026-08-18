@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: ShurLoc Environment
+ * Plugin Name: Shur-loc Environment
  * Plugin URI:  https://shurloc.com/
- * Description: Environment-specific safeguards for the ShurLoc website.
+ * Description: Environment-specific safeguards for the Shur-loc website.
  * Version:     1.1.0
- * Author:      ShurLoc
+ * Author:      Shur-loc
  * Author URI:  https://shurloc.com/
  * Text Domain: shurloc-environment
  *

@@ -1,8 +1,8 @@
 <?php
 /**
- * Shared ShurLoc Tools admin menu.
+ * Shared Shur-loc Tools admin menu.
  *
- * Registers the ShurLoc Tools top-level menu, Overview submenu,
+ * Registers the Shur-loc Tools top-level menu, Overview submenu,
  * and shared overview rendering hook.
  *
  * @package ShurlocTools
@@ -15,7 +15,7 @@ namespace Shurloc\Tools;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Registers the shared ShurLoc Tools admin menu.
+ * Registers the shared Shur-loc Tools admin menu.
  */
 final class Shurloc_Admin_Menu {
 
@@ -51,15 +51,15 @@ final class Shurloc_Admin_Menu {
 	}
 
 	/**
-	 * Register the shared ShurLoc Tools admin menu.
+	 * Register the shared Shur-loc Tools admin menu.
 	 *
 	 * @return void
 	 */
 	public function register_menu(): void {
 
 		add_menu_page(
-			'ShurLoc Tools',
-			'ShurLoc Tools',
+			'Shur-loc Tools',
+			'Shur-loc Tools',
 			self::CAPABILITY,
 			self::MENU_SLUG,
 			array(
@@ -72,7 +72,7 @@ final class Shurloc_Admin_Menu {
 
 		add_submenu_page(
 			self::MENU_SLUG,
-			'ShurLoc Tools',
+			'Shur-loc Tools',
 			'Overview',
 			self::CAPABILITY,
 			self::MENU_SLUG,
@@ -85,9 +85,9 @@ final class Shurloc_Admin_Menu {
 	}
 
 	/**
-	 * Render the ShurLoc Tools overview page.
+	 * Render the Shur-loc Tools overview page.
 	 *
-	 * Individual ShurLoc plugins contribute their own overview sections
+	 * Individual Shur-loc plugins contribute their own overview sections
 	 * through the shurloc_tools_overview action.
 	 *
 	 * @return void
@@ -97,17 +97,17 @@ final class Shurloc_Admin_Menu {
 
 		<div class="wrap">
 
-			<h1>ShurLoc Tools</h1>
+			<h1>Shur-loc Tools</h1>
 
 			<p>
-				Administrative tools for ShurLoc WordPress and WooCommerce operations.
+				Administrative tools for Shur-loc WordPress and WooCommerce operations.
 			</p>
 
 			<?php
 			/**
-			 * Fires when rendering the ShurLoc Tools overview page.
+			 * Fires when rendering the Shur-loc Tools overview page.
 			 *
-			 * ShurLoc plugins should use this action to render their own overview
+			 * Shur-loc plugins should use this action to render their own overview
 			 * sections. Suggested priorities:
 			 *
 			 * 10 - Products
