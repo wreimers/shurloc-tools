@@ -3,7 +3,7 @@
  * Plugin Name: ShurLoc Environment
  * Plugin URI:  https://shurloc.com/
  * Description: Environment-specific safeguards for the ShurLoc website.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      ShurLoc
  * Author URI:  https://shurloc.com/
  * Text Domain: shurloc-environment

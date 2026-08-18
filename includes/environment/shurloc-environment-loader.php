@@ -3,7 +3,7 @@
  * Plugin Name:       ShurLoc Environment Loader
  * Plugin URI:        https://shurloc.com/
  * Description:       Loads ShurLoc environment safeguards before normal plugins.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            ShurLoc
  * Author URI:        https://shurloc.com/
  * Text Domain:       shurloc-environment-loader

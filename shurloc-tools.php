@@ -3,7 +3,7 @@
  * Plugin Name:       Shur-loc Tools
  * Plugin URI:        https://shurloc.com/
  * Description:       Shared infrastructure for Shur-loc WordPress and WooCommerce tools.
- * Version:           0.2.0
+ * Version:           0.3.0
  * Requires at least: 7.0
  * Requires PHP:      8.4
  * Author:            Shur-loc
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
  */
 define(
 	'SHURLOC_TOOLS_VERSION',
-	'0.2.0'
+	'0.3.0'
 );
 
 /**
