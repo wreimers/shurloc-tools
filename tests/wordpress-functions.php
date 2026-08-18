@@ -201,3 +201,17 @@ if ( ! function_exists( 'wp_get_environment_type' ) ) {
 		return $GLOBALS['shurloc_test_environment_type'] ?? 'production';
 	}
 }
+
+
+if ( ! function_exists( 'esc_html' ) ) {
+
+	/**
+	 * Escape test HTML text.
+	 *
+	 * @param string $text Text to escape.
+	 * @return string
+	 */
+	function esc_html( string $text ): string {
+		return $text;
+	}
+}
