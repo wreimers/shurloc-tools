@@ -55,10 +55,6 @@ function shurloc_disable_site_kit_on_staging( array $plugins ): array {
 		)
 	);
 }
-add_filter(
-	'option_active_plugins',
-	'shurloc_disable_site_kit_on_staging'
-);
 
 /**
  * Disable automatic updates for Google Site Kit on staging.
@@ -84,12 +80,6 @@ function shurloc_disable_site_kit_auto_updates_on_staging(
 
 	return $update;
 }
-add_filter(
-	'auto_update_plugin',
-	'shurloc_disable_site_kit_auto_updates_on_staging',
-	10,
-	2
-);
 
 /**
  * Replace Google Site Kit action links with a staging-disabled message.
@@ -126,12 +116,6 @@ function shurloc_site_kit_staging_plugin_actions(
 		),
 	);
 }
-add_filter(
-	'plugin_action_links',
-	'shurloc_site_kit_staging_plugin_actions',
-	10,
-	4
-);
 
 /**
  * Replace the Google Site Kit automatic-update control on staging.
@@ -159,12 +143,6 @@ function shurloc_site_kit_staging_auto_update_setting(
 		)
 	);
 }
-add_filter(
-	'plugin_auto_update_setting_html',
-	'shurloc_site_kit_staging_auto_update_setting',
-	10,
-	2
-);
 
 /**
  * Redirect all outgoing WordPress email on staging.
@@ -194,11 +172,6 @@ function shurloc_redirect_staging_email( array $args ): array {
 
 	return $args;
 }
-add_filter(
-	'wp_mail',
-	'shurloc_redirect_staging_email',
-	999
-);
 
 /**
  * Remove CC and BCC headers from an outgoing email.
@@ -264,4 +237,60 @@ function shurloc_is_staging_email_recipient_header(
 		'/^(cc|bcc)\s*:/i',
 		trim( $header )
 	);
+}
+
+/**
+ * Register Google Site Kit staging safeguard hooks.
+ *
+ * @return void
+ */
+function shurloc_register_site_kit_hooks(): void {
+	add_filter(
+		'option_active_plugins',
+		'shurloc_disable_site_kit_on_staging'
+	);
+
+	add_filter(
+		'auto_update_plugin',
+		'shurloc_disable_site_kit_auto_updates_on_staging',
+		10,
+		2
+	);
+
+	add_filter(
+		'plugin_action_links',
+		'shurloc_site_kit_staging_plugin_actions',
+		10,
+		4
+	);
+
+	add_filter(
+		'plugin_auto_update_setting_html',
+		'shurloc_site_kit_staging_auto_update_setting',
+		10,
+		2
+	);
+}
+
+/**
+ * Register staging email hooks.
+ *
+ * @return void
+ */
+function shurloc_register_staging_email_hooks(): void {
+	add_filter(
+		'wp_mail',
+		'shurloc_redirect_staging_email',
+		999
+	);
+}
+
+/**
+ * Register all ShurLoc Environment hooks.
+ *
+ * @return void
+ */
+function shurloc_register_environment_hooks(): void {
+	shurloc_register_site_kit_hooks();
+	shurloc_register_staging_email_hooks();
 }

@@ -20,4 +20,8 @@ $environment_file = WP_PLUGIN_DIR
 
 if ( file_exists( $environment_file ) ) {
 	require_once $environment_file;
+
+	if ( function_exists( 'shurloc_register_environment_hooks' ) ) {
+		shurloc_register_environment_hooks();
+	}
 }
