@@ -19,3 +19,6 @@ require_once dirname( __DIR__ ) . '/tests/wordpress-functions.php';
 
 // Load menu.
 require_once dirname( __DIR__ ) . '/includes/class-shurloc-admin-menu.php';
+
+// Load shurloc-environment-mu.
+require_once dirname( __DIR__ ) . '/includes/environment/shurloc-environment-mu.php';
