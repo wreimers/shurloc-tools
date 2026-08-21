@@ -111,7 +111,7 @@ function shurloc_site_kit_staging_plugin_actions(
 		'shurloc_environment' => sprintf(
 			'%s',
 			esc_html(
-				'Disabled on staging by ShurLoc Environment'
+				'Disabled on staging by Shur-loc Environment'
 			)
 		),
 	);
@@ -139,7 +139,7 @@ function shurloc_site_kit_staging_auto_update_setting(
 	return sprintf(
 		'%s',
 		esc_html(
-			'Auto-updates disabled by ShurLoc Environment'
+			'Auto-updates disabled by Shur-loc Environment'
 		)
 	);
 }
@@ -286,7 +286,7 @@ function shurloc_register_staging_email_hooks(): void {
 }
 
 /**
- * Register all ShurLoc Environment hooks.
+ * Register all Shur-loc Environment hooks.
  *
  * @return void
  */
