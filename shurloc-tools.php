@@ -10,7 +10,7 @@
  * Author URI:        https://shurloc.com/
  * Text Domain:       shurloc-tools
  *
- * @package ShurLocTools
+ * @package ShurlocTools
  */
 
 declare( strict_types=1 );
